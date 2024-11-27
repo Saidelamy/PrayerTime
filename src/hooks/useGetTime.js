@@ -40,9 +40,7 @@ const useGetTime = () => {
     } else {
       prayerIndex = 0;
     }
-
     setNextPrayerIndex(prayerIndex);
-
     // now we get the prayer we will get the time
     const nextPrayerObject = availablePrayers[prayerIndex];
     const nextPrayerTime = timing[nextPrayerObject.key];
@@ -62,6 +60,7 @@ const useGetTime = () => {
 
       timeLeft = totalDiffTime;
     }
+
     // عرض الوقت المتبقي كا ساعات ودقايق
     const DurationTimeLeft = moment.duration(timeLeft);
 

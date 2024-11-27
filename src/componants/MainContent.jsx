@@ -14,6 +14,7 @@ const MainContent = () => {
     countryName,
     selectMenuChangeForCity,
     selectMenuChangeForCountry,
+    loading,
   } = UseApi();
 
   return (
@@ -29,21 +30,36 @@ const MainContent = () => {
             </div>
           </Grid>
           <Grid size={{ md: 6, xs: 12 }}>
-            <h2 style={{}}>
+            <h2>
               متبقي حتي صلاة {availablePrayers[nextPrayerIndex].displayName}
             </h2>
-            <p
-              style={{
-                backgroundColor: "#fff",
-                color: "#0D1117",
-                fontSize: "25px",
-                maxWidth: "150px",
-                textAlign: "center",
-                fontWeight: "bold",
-              }}
-            >
-              {timeLeft}
-            </p>
+            {loading ? (
+              <p
+                style={{
+                  backgroundColor: "#fff",
+                  color: "#0D1117",
+                  fontSize: "25px",
+                  maxWidth: "150px",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                انتظر...
+              </p>
+            ) : (
+              <p
+                style={{
+                  backgroundColor: "#fff",
+                  color: "#0D1117",
+                  fontSize: "25px",
+                  maxWidth: "150px",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                {timeLeft}
+              </p>
+            )}
           </Grid>
         </Grid>
       </Box>

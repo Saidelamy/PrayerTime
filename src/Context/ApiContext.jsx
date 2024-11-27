@@ -7,6 +7,7 @@ import { availableCountries } from "../assets/availableAssets";
 const ApiContextBuilder = createContext();
 const ApiContext = ({ children }) => {
   const [today, setToday] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [countryName, setCountryName] = useState({
     displayName: availableCountries[0].displayName,
@@ -28,12 +29,13 @@ const ApiContext = ({ children }) => {
 
   useEffect(() => {
     const getDataAboutPrayerTime = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         `https://api.aladhan.com/v1/timingsByCity?country=${countryName.apiName}&city=${cityName.apiName}`
       );
       setTiming(data.data.timings);
+      setLoading(false);
     };
-
     getDataAboutPrayerTime();
   }, [cityName, countryName]);
 
@@ -44,12 +46,14 @@ const ApiContext = ({ children }) => {
   }, [timing]);
 
   const selectMenuChangeForCountry = (e) => {
+    setLoading(true);
     const countryObject = availableCountries.find((country) => {
       return country.apiName === e.target.value;
     });
 
     setCountryName(countryObject);
     setCityName("");
+    setLoading(false);
   };
 
   let indexOfCountry;
@@ -61,12 +65,14 @@ const ApiContext = ({ children }) => {
 
   // select menu change
   const selectMenuChangeForCity = (e) => {
+    setLoading(true);
     const cityObject = availableCountries[indexOfCountry].cities.find(
       (city) => {
         return city.apiName === e.target.value;
       }
     );
     setCityName(cityObject);
+    setLoading(false);
   };
 
   return (
@@ -82,6 +88,8 @@ const ApiContext = ({ children }) => {
         selectMenuChangeForCity,
         selectMenuChangeForCountry,
         setToday,
+        loading,
+        setLoading,
       }}
     >
       {children}
