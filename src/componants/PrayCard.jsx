@@ -10,7 +10,7 @@ const PrayCard = ({ prayerName, prayerTime, prayerImage }) => {
 
   return (
     <>
-      <Card sx={{ maxWidth: 365, minWidth: 220 }}>
+      {/* <Card sx={{ maxWidth: 365, minWidth: 220 }}>
         <Box>
           <CardMedia
             sx={{ height: 170 }}
@@ -24,6 +24,37 @@ const PrayCard = ({ prayerName, prayerTime, prayerImage }) => {
             </Typography>
           </CardContent>
         </Box>
+      </Card> */}
+      <Card sx={{ display: "flex" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <CardContent sx={{ flex: "1 0 auto" }}>
+            <Typography component="div" variant="h5">
+              {prayerName}
+            </Typography>
+            <Typography
+              component="div"
+              variant="h4"
+              sx={{ color: "text.secondary" }}
+            >
+              {time12h}
+            </Typography>
+          </CardContent>
+          <Box
+            xs={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
+          ></Box>
+        </Box>
+        <CardMedia
+          component="img"
+          sx={{ width: 110 }}
+          image={prayerImage}
+          alt={prayerName}
+        />
       </Card>
     </>
   );

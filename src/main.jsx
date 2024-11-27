@@ -7,7 +7,9 @@ import { ApiContext } from "./Context/ApiContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ApiContext>
-      <App />
+      <div className="app">
+        <App />
+      </div>
     </ApiContext>
   </StrictMode>
 );

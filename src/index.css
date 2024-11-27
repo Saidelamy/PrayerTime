@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Oswald:wght@200..700&display=swap");
 :root {
-  background-color: #0d1117;
   font-family: "IBM Plex Sans Arabic", sans-serif !important;
   color: #fff;
+  background-image: url("https://i.pinimg.com/originals/e0/b8/5a/e0b85a136d0bc78aa4528a7671be149b.jpg");
+  background-size: cover;
+}
+.app {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 79px;
 }
 #demo-simple-select-label,
 .MuiSvgIcon-root,
