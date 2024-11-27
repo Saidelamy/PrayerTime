@@ -1,11 +1,11 @@
 import { Divider } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import { availablePrayers } from "../assets/AvailableCities";
 import Cards from "./Cards";
 import useGetTime from "../hooks/useGetTime";
 import SelectMenu from "./SelectMenu";
 import { UseApi } from "../Context/ApiContext";
+import { availablePrayers } from "../assets/availableAssets";
 const MainContent = () => {
   const { nextPrayerIndex, timeLeft } = useGetTime();
   const {

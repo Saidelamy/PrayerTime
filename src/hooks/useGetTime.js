@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { availablePrayers } from "../assets/AvailableCities";
+import { UseApi } from "../Context/ApiContext";
+import { availablePrayers } from "../assets/availableAssets";
 import moment from "moment";
 import "moment/dist/locale/ar-tn";
-import { UseApi } from "../Context/ApiContext";
 moment.locale("ar-tn");
 
 const useGetTime = () => {
