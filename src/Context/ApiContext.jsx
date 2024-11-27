@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import { availableCountries } from "../assets/AvailableCountries";
+import { availableCountries } from "../assets/AvailableCountries.js";
 
 const ApiContextBuilder = createContext();
 const ApiContext = ({ children }) => {
