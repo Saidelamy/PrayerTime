@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
-import { availableCountries } from "../assets/AvailableCities";
 import axios from "axios";
 import moment from "moment";
+import { availableCountries } from "../assets/AvailableCountries";
 
 const ApiContextBuilder = createContext();
 const ApiContext = ({ children }) => {
